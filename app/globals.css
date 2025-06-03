@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Default color values */
+    --primary-color: #3b82f6;
+    --secondary-color: #1d4ed8;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+
+  /* Accent color definitions */
+  .accent-blue {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --primary-color: #3b82f6;
+    --secondary-color: #1d4ed8;
+  }
+
+  .accent-purple {
+    --primary: 267 75% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 267 50% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --primary-color: #8b5cf6;
+    --secondary-color: #6d28d9;
+  }
+
+  .accent-green {
+    --primary: 142 76% 36%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142 64% 24%;
+    --secondary-foreground: 0 0% 100%;
+    --primary-color: #22c55e;
+    --secondary-color: #16a34a;
+  }
+
+  .accent-orange {
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 94% 34%;
+    --secondary-foreground: 0 0% 100%;
+    --primary-color: #f97316;
+    --secondary-color: #ea580c;
+  }
+
+  .accent-pink {
+    --primary: 336 80% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 336 74% 35%;
+    --secondary-foreground: 0 0% 100%;
+    --primary-color: #ec4899;
+    --secondary-color: #db2777;
+  }
+
+  /* Custom accent will be handled via inline styles */
+  .accent-custom {
+    /* Base styles that will be overridden by inline styles */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-size: 14px;
+    line-height: 1.4;
+    overscroll-behavior: none;
+    touch-action: manipulation;
+    position: relative;
+  }
+
+  /* Set default font sizes for mobile */
+  h1 {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.75rem;
+  }
+
+  h2 {
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem;
+  }
+
+  p,
+  span,
+  div {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem;
+  }
+
+  small {
+    font-size: 0.75rem; /* 12px */
+    line-height: 1rem;
+  }
+
+  /* Improve touch targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 40px;
+    min-width: 40px;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* Prevents iOS zoom */
+  }
+}
+
+/* Custom color utility classes */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+.bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+.border-primary {
+  border-color: var(--primary-color) !important;
+}
+
+/* Color swatch styling */
+.color-swatch {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+}
+
+.color-swatch-selected {
+  border: 2px solid var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Color picker wrapper */
+.color-picker-wrapper {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+}
+
+/* Mobile app container */
+.mobile-app {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  position: relative;
+  background-color: hsl(var(--background));
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+.main-content {
+  @apply pt-12 pb-16 min-h-screen;
+}
+
+/* Safe area insets */
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pl-safe {
+  padding-left: env(safe-area-inset-left, 0px);
+}
+
+.pr-safe {
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Mobile header */
+.mobile-header {
+  @apply fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40 px-4 py-2;
+}
+
+/* Ensure avatar is always visible */
+.mobile-header .avatar {
+  z-index: 60;
+  position: relative;
+}
+
+/* Page container */
+.page-container {
+  padding-top: calc(56px + env(safe-area-inset-top, 0px));
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.page-content {
+  @apply px-4 pt-2 pb-16;
+}
+
+/* Card container */
+.card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Scrollable page class */
+.scrollable-page {
+  min-height: 100vh;
+  height: auto;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* Override Tailwind classes with !important */
+.btn-primary {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
+
+/* Override shadcn button when using primary */
+[data-theme="default"][data-variant="default"] {
+  background-color: var(--primary-color) !important;
+  color: white !important;
+}
